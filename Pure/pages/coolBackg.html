@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css Chalanges</title>
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/coolBackg.css" />
+  </head>
+  <body>
+    <section id="container"></section>
+    <script>
+      const area = 40 * 39;
+      const limit = (window.innerWidth * window.innerHeight) / area;
+      for (let i = 0; i < limit; i++) {
+        let span = document.createElement("SPAN");
+        let node = document.createTextNode("");
+        span.appendChild(node);
+        let container = document.getElementById("container");
+        container.appendChild(span);
+      }
+    </script>
+  </body>
+</html>

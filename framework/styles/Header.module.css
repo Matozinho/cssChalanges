@@ -1,0 +1,74 @@
+.header {
+  height: 10vh;
+  background-color: #5b78c7;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: auto;
+}
+
+.navLinks li a {
+  color: white;
+  text-decoration: none;
+
+  font-size: 16px;
+}
+
+.main {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: lightcoral;
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+    flex-direction: column;
+  }
+
+  .hamburguer {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    /*Faz com que seja descontado o tamanho do icone ou do elemento(div e lines)*/
+    transform: translate(-5%, -50%);
+  }
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+  }
+
+  .navLinks {
+    position: fixed;
+    height: 100vh;
+    width: 50%;
+    flex-direction: column;
+
+    background-color: #5b78c7;
+
+    clip-path: circle(100px at 90% -10%);
+    /*Garantir que não haverá falhas no clip path*/
+    -webkit-clip-path: circle(100px at 90% -10%);
+
+    transition: all 1s ease-out;
+  }
+
+  .navLinks.open {
+    clip-path: circle(1100px at 90% -10%);
+    /*Garantir que não haverá falhas no clip path*/
+    -webkit-clip-path: circle(1100px at 90% -10%);
+  }
+}
