@@ -1,0 +1,46 @@
+.letter {
+  fill: var(--logoColor);
+  opacity: 0;
+  animation: slideToTop 0.6s 0.3s forwards;
+}
+
+.point {
+  fill: var(--pointColor);
+  opacity: 0;
+  animation: slideFromTop 0.6s 0.5s forwards;
+}
+
+.lambda {
+  fill: var(--logoColor);
+  opacity: 0;
+  animation: slideToTop 0.6s forwards;
+}
+
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-100px) rotateY(-35deg);
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateY(0);
+  }
+}
+
+@keyframes slideToTop {
+  0% {
+    transform: translateY(100px) rotateY(-35deg);
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateY(0);
+  }
+}
