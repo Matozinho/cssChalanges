@@ -60,7 +60,7 @@ li {
   width: 100%;
 }
 
-.container header {
+.container > header {
   width: 100%;
   height: 100vh;
   position: relative;
@@ -108,14 +108,14 @@ header > section > nav > h1 {
   font-size: 2.25rem;
 }
 
-section > nav ul {
+nav ul {
   display: flex;
   flex: 1;
   max-width: 50%;
   justify-content: space-around;
 }
 
-nav ul li a {
+ul li a {
   font-family: "Josefin Sans", sans-serif;
   color: var(--white);
 }
@@ -188,4 +188,152 @@ main > section > div {
   font-weight: 300;
   line-height: 1.65rem;
   color: var(--gray);
+}
+
+.creationsContainer {
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 4rem;
+  text-transform: uppercase;
+}
+
+.creationsContainer > header {
+  width: 100%;
+  height: 5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
+}
+
+.creationsContainer > header > h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.creationsContainer > header > button {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  background-color: var(--white);
+
+  border: 1px solid var(--black);
+  padding: 0.75rem 2.5rem;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.creationsContainer > header > button:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.creations {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+  align-content: space-between;
+  gap: 2rem;
+
+  padding: 4rem 0;
+  margin-bottom: 5rem;
+}
+
+.imgCard {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.imgCard > img {
+  transition: opacity 0.3s;
+}
+
+.imgCard:hover > img {
+  opacity: 0.3;
+}
+
+.imgCard:hover > p {
+  color: var(--black);
+}
+
+.imgCard > p {
+  position: absolute;
+  left: 15%;
+  bottom: 10%;
+
+  color: var(--white);
+  font-family: "Alata", sans-serif;
+  font-weight: 300;
+  line-height: 2.5rem;
+  font-size: 2.5rem;
+
+  transition: 0.3s;
+}
+
+footer {
+  width: 100%;
+
+  color: var(--white);
+  margin-top: 5rem;
+
+  background-color: var(--black);
+}
+
+.footerContent {
+  width: 100%;
+  max-width: 1440px;
+
+  padding: 3rem 4rem;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftContent > h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 500;
+
+  margin-bottom: 1.5rem;
+}
+
+.leftContent ul {
+  display: flex;
+}
+
+.leftContent > ul > li {
+  margin-right: 1.5rem;
+}
+
+.rightContent {
+  text-align: end;
+}
+
+.contact {
+  margin-bottom: 1.5rem;
+}
+
+.contact > a {
+  margin: 0 0.3rem;
+}
+
+.rightContent > p {
+  font-family: "alata", sans-serif;
+  font-weight: 300;
+  color: var(--darkGray);
 }
