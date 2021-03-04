@@ -4,28 +4,17 @@
   box-sizing: border-box;
 }
 
-a {
+li > a,
+.contact > a {
   text-decoration: none;
   padding-bottom: 0.4rem;
   position: relative;
 
   transition: after ease 2s;
 }
-/*
-a::after {
-  content: "";
 
-  height: 2px;
-  width: 1.25rem;
-  background-color: white;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%);
-  border-radius: 25px;
-}*/
-
-a::after {
+li > a::after,
+.contact > a::after {
   content: "";
 
   height: 3px;
@@ -73,6 +62,51 @@ li {
   color: var(--white);
 }
 
+.mobileMenu {
+  display: none;
+  visibility: hidden;
+  font-family: "Josefin-sans", sans-serif;
+  background-color: var(--black);
+
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+
+  transition: 4s;
+}
+
+.mobileMenuContent {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+  width: 85%;
+}
+
+.mobileMenuContent > header {
+  display: flex;
+  width: 100%;
+
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.menuLinks {
+  display: flex;
+  flex-direction: column;
+
+  height: 40vh;
+  margin-top: 2rem;
+  justify-content: space-evenly;
+}
+
+.menuLinks > li > a {
+  color: var(--gray);
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
 header > section {
   height: 100%;
   width: 100%;
@@ -103,6 +137,11 @@ header > section > nav {
   align-items: center;
 }
 
+.hamburger {
+  display: none;
+  visibility: hidden;
+}
+
 header > section > nav > h1 {
   font-family: "Josefin Sans", sans-serif;
   font-size: 2.25rem;
@@ -121,12 +160,12 @@ ul li a {
 }
 
 .slogan {
-  width: 100%;
+  display: flex;
+  width: fit-content;
   padding: 2rem;
-  max-width: 675px;
 
-  justify-content: center;
   margin-left: 4rem;
+  margin-right: 3rem;
 
   font-family: "Josefin Sans", sans-serif;
   font-weight: 200;
@@ -137,8 +176,9 @@ ul li a {
 }
 
 main {
-  height: 90vh;
   width: 100%;
+
+  padding: 8rem 0;
 }
 
 main > section {
@@ -151,43 +191,25 @@ main > section {
   margin: 0 auto;
   padding: 0 4rem;
 }
-main > section > div {
-  width: 100%;
-  position: relative;
-}
 
-.text {
-  background-color: var(--white);
-  max-width: 580px;
-  height: 320px;
-
-  position: absolute;
-  bottom: 0;
-  left: 42%;
-
-  padding-left: 4rem;
-  padding-bottom: 0.5rem;
-  padding-right: 2.25rem;
-
-  justify-content: flex-end;
+.imgContainer {
   display: flex;
-  text-align: left;
-  flex-direction: column;
+  flex: 1;
+  max-width: 760px;
 }
 
-.text h1 {
+.imgContainer img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.text > h1 {
   font-family: "Josefin Sans", sans-serif;
   font-size: 3rem;
   font-weight: 300;
   text-transform: uppercase;
   margin-bottom: 2rem;
-}
-
-.text p {
-  font-family: "Alata", sans-serif;
-  font-weight: 300;
-  line-height: 1.65rem;
-  color: var(--gray);
 }
 
 .creationsContainer {
@@ -224,6 +246,8 @@ main > section > div {
   text-transform: uppercase;
   letter-spacing: 4px;
 
+  margin-left: 1rem;
+
   background-color: var(--white);
 
   border: 1px solid var(--black);
@@ -231,6 +255,11 @@ main > section > div {
 
   cursor: pointer;
   transition: 0.3s;
+}
+
+.seeAll {
+  display: none;
+  visibility: hidden;
 }
 
 .creationsContainer > header > button:hover {
@@ -305,6 +334,11 @@ footer {
   align-items: center;
 }
 
+.leftContent {
+  display: flex;
+  flex-direction: column;
+}
+
 .leftContent > h1 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 500;
@@ -322,6 +356,9 @@ footer {
 
 .rightContent {
   text-align: end;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
 }
 
 .contact {
@@ -336,4 +373,223 @@ footer {
   font-family: "alata", sans-serif;
   font-weight: 300;
   color: var(--darkGray);
+}
+
+.text {
+  width: 100%;
+  max-width: 760px;
+}
+
+main > section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.text {
+  width: 100%;
+  max-width: 760px;
+  text-align: center;
+
+  padding: 4rem;
+}
+
+.text p {
+  font-family: "Alata", sans-serif;
+  font-weight: 300;
+  line-height: 1.65rem;
+  color: var(--gray);
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 1000px) {
+  main > section > div {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+
+  .text {
+    background-color: var(--white);
+    max-width: 580px;
+    height: 320px;
+
+    position: absolute;
+    bottom: 0;
+    left: 42%;
+
+    padding-left: 4rem;
+    padding-bottom: 0.5rem;
+    padding-right: 2.25rem;
+
+    justify-content: flex-end;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+  }
+  .text p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .slogan p {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  nav ul {
+    visibility: hidden;
+  }
+  .hamburger {
+    visibility: visible;
+    display: block;
+    padding: 2px;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftContent {
+    align-items: center;
+  }
+
+  .rightContent {
+    margin-top: 4rem;
+    align-items: center;
+  }
+
+  .text {
+    padding: 1.25rem;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .hamburger {
+    margin-right: 0.5rem;
+  }
+  header > section > nav {
+    padding: 0 1rem;
+  }
+  .slogan > p {
+    font-size: 2rem;
+  }
+
+  .slogan {
+    margin: 2rem;
+  }
+  .text h1 {
+    font-size: 2rem;
+  }
+
+  .text p {
+    font-size: 0.75rem;
+  }
+
+  .creations {
+    margin-bottom: 0.75rem;
+  }
+
+  .creationsContainer > header > button {
+    display: none;
+    visibility: hidden;
+  }
+
+  .creationsContainer > header {
+    justify-content: center;
+  }
+
+  .creationsContainer > header > h1 {
+    font-size: 2rem;
+  }
+
+  .creations {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imgCard > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    top: 0;
+    overflow: hidden;
+  }
+
+  .imgCard {
+    width: 100%;
+    height: 250px;
+    margin: 0.25rem;
+  }
+
+  .leftContent h1 {
+    font-size: 1.5rem;
+  }
+
+  .leftContent {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .leftContent > ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftContent > ul > li {
+    margin: 0.25rem 0;
+    align-items: center;
+  }
+
+  .rightContent {
+    margin: 1rem 0;
+  }
+
+  .seeAll {
+    visibility: inherit;
+    display: flex;
+    width: fit-content;
+    align-self: center;
+
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    margin-left: 1rem;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--black);
+    padding: 0.75rem 2.5rem;
+
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .slogan {
+    margin: 0.5rem;
+  }
+  header > section > nav > h1 {
+    font-size: 1.5rem;
+  }
+  main > section {
+    padding: 0.75rem;
+  }
+
+  .creationsContainer {
+    padding: 0.75rem;
+  }
 }

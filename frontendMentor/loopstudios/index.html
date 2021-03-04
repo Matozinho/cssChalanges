@@ -45,7 +45,30 @@
               <li><a href="#">Products</a></li>
               <li><a href="#">Support</a></li>
             </ul>
+            <a href="#" onclick="showMenu()" class="hamburger">
+              <img src="./images/icon-hamburger.svg" alt="Menu" />
+            </a>
           </nav>
+          <div class="mobileMenu">
+            <div class="mobileMenuContent">
+              <header>
+                <h1>loopstudios</h1>
+                <img
+                  class="close"
+                  onclick="closeMenu()"
+                  src="./images/icon-close.svg"
+                  alt="Close"
+                />
+              </header>
+              <ul class="menuLinks">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Support</a></li>
+              </ul>
+            </div>
+          </div>
           <div class="slogan">
             <p>
               Immersive <br />
@@ -58,13 +81,17 @@
       <main>
         <section>
           <div>
-            <img src="./images/desktop/image-interactive.jpg" alt="VR Image" />
+            <div class="imgContainer">
+              <img
+                src="./images/desktop/image-interactive.jpg"
+                alt="VR Image"
+              />
+            </div>
             <div class="text">
               <h1>
                 The leader in <br />
                 interactive VR
               </h1>
-
               <p>
                 Founded in 2011, Loopstudios has been producing world-class
                 virtual reality projects for some of the best companies around
@@ -156,6 +183,7 @@
             </p>
           </div>
         </section>
+        <button class="seeAll">See all</button>
       </section>
       <footer>
         <div class="footerContent">
@@ -195,5 +223,17 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Felipi Lima Matozinho</a>.
     </div>
+    <script>
+      function showMenu() {
+        let menu = document.querySelector(".mobileMenu");
+        menu.style.display = "block";
+        menu.style.visibility = "visible";
+      }
+      function closeMenu() {
+        let openMenu = document.querySelector(".mobileMenu");
+        openMenu.style.display = "none";
+        openMenu.style.visibility = "hidden";
+      }
+    </script>
   </body>
 </html>
