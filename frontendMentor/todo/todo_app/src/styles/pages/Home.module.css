@@ -1,0 +1,16 @@
+.homeContainer {
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: var(--backgroundColor);
+  background-image: var(--backgroundImg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: scroll;
+}
+
+.todoContent {
+  margin: 0 auto;
+  padding-top: 5%;
+  max-width: 550px;
+}
